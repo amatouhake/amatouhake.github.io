@@ -17,8 +17,8 @@ body {
 
 header {
 	position: absolute;
-	top: calc(20vh - 2.5em);
-	left: 50%;
+	top: 20vh;
+	left: calc(50% - 2.5em);
 	font-size: 5em;
 	font-family: 'Anton', sans-serif;
 	color: #fff;
