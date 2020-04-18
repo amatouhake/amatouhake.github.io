@@ -16,6 +16,7 @@ body {
 }
 
 header {
+	position: absolute;
 	top: 20vh;
 	text-align: center;
 	font-size: 5em;
