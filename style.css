@@ -16,8 +16,7 @@ body {
 }
 
 header {
-	top: 500px;
-	text-align: center;
+	margin: 50vh auto;
 	font-size: 5em;
 	font-family: 'Anton', sans-serif;
 	color: #fff;
