@@ -1,4 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+html, body, header {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+}
 
 body {
 	height: 100vh;
@@ -6,9 +14,10 @@ body {
 	background: -webkit-linear-gradient(to bottom,#051637,#1c2c52 50%,#5c658b); 
 	background: linear-gradient(to bottom,#051637,#1c2c52 50%,#5c658b); 
 	font-family: 'Lato', sans-serif;
-	color: white;
+	color: #000;
 }
 
 header {
-	background: white;
+	font-family: 'Anton', sans-serif;
+	color: #fff;
 }
