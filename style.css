@@ -16,7 +16,8 @@ body {
 }
 
 header {
-	margin: 20vh;
+	top: 20vh;
+	text-align: center;
 	font-size: 5em;
 	font-family: 'Anton', sans-serif;
 	color: #fff;
