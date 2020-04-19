@@ -16,9 +16,9 @@ body {
 }
 
 header {
-	position: absolute;
-	top: 20vh;
-	left: calc(50% - 2.5em);
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
 	font-size: 5em;
 	font-family: 'Anton', sans-serif;
 	color: #fff;
