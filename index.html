@@ -1,16 +1,117 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset='utf-8' />
-    <meta http-equiv='X-UA-Compatible' content='ie=edge' />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Hake HP</title>
-    <meta name="description" content="完成なんてない。" />
-    <link rel="canonical" href="https://amatouhake.github.io/" />
-    <link rel="stylesheet" href="style.css" />
+	<meta charset='utf-8' />
+	<meta http-equiv='X-UA-Compatible' content='ie=edge' />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Hake</title>
+	<meta name="description" content="マインクラフトで色々作ったりしてます。たまにプログラミングとかも。" />
+	<meta name="keywords" content="マインクラフト,Minecraft,プログラミング" />
+	<link rel="canonical" href="https://amatouhake.github.io/" />
+	<link rel="icon" href="icon.ico">
+	<link rel="apple-touch-icon-precomposed" href="icon.png" />
+	<link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&display=swap">
+	<style>
+* {
+	margin: 0;
+	padding: 0;
+	font-size: medium;
+	font-weight: normal;
+	font-family: 'Lato', sans-serif;
+}
+
+header {
+	height: 3em;
+	background: #000;
+	color: #fff;
+}
+
+#title {
+	color: #f00;
+}
+
+input {
+	position: absolute;
+	right: 0.5em;
+	top: 0.5em;
+	width: 2em;
+	height: 2em;
+	opacity: 0;
+	z-index: 3;
+}
+
+#span span {
+	position: absolute;
+	right: 0.75em;
+	top: 0.9em;
+	width: 2em;
+	height: 0.2em;
+	background: #fff;
+	transition-duration: 0.2s;
+	z-index: 2;
+}
+
+#span span:nth-child(2) {
+	top: 1.5em;
+}
+
+#span span:nth-child(3) {
+	top: 2.1em;
+}
+
+input:checked ~ #span span {
+	top: 1.5em;
+	transform: rotate(45deg);
+}
+
+input:checked ~ #span span:nth-of-type(2) {
+	transform: rotate(135deg);
+}
+
+#content {
+	position: absolute;
+	bottom: calc(100% - 3em);
+	width: 100%;
+	height: 50%;
+	background: #000;
+	opacity: 0;
+	transition-duration: 0.2s;
+	z-index: 1;
+}
+
+input:checked ~ #content {
+	bottom: 50%;
+	opacity: 1;
+}
+
+canvas {
+	width: 100%;
+}
+	</style>
 </head>
 <body>
-    <div id="title">TEST</div>
-    <div id="board"></div>
+	<header>
+		<div id="title">Hake</div>
+		<input type="checkbox"></input>
+		<div id="span">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<div id="content">
+			あんこ
+		</div>
+	</header>
+	<canvas></canvas>
+	<script>
+(window.onload = function() {
+	var canvas = document.querySelector("canvas");
+	canvas.width = window.innerWidth;
+	canvas.height = 350;
+	var ctx = canvas.getContext("2d");
+	ctx.fillRect(50,50,window.innerWidth-100,300);
+	ctx.clearRect(100,100,window.innerWidth-200,200);
+})();
+	</script>
 </body>
-</html>

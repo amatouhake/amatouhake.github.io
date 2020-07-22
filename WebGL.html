@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<meta http-equiv='X-UA-Compatible' content='ie=edge' />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>はけ</title>
+	<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+	<style>
+* {
+	margin: 0;
+	padding: 0;
+	font-size: medium;
+	font-weight: normal;
+	font-family: 'Lato', sans-serif;
+}
+
+header {
+	height: 2em;
+	background: black;
+	color: white;
+}
+
+canvas {
+	width: 100%;
+}
+	</style>
+</head>
+<body>
+	<header>
+	</header>
+	<canvas></canvas>
+	<script>
+(window.onload = function() {
+	const canvas = document.querySelector("canvas");
+	const gl = canvas.getContext("webgl");
+	
+	if (!gl) {
+		alert("WebGL を初期化できません。ブラウザーまたはマシンがサポートしていない可能性があります。");
+		return;
+	}
+	
+	gl.clearColor(0.0, 0.0, 0.0, 1.0);
+	gl.clear(gl.COLOR_BUFFER_BIT);
+})();
+	</script>
+</body>
