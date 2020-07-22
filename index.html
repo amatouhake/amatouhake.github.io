@@ -4,7 +4,7 @@
 	<meta charset='utf-8' />
 	<meta http-equiv='X-UA-Compatible' content='ie=edge' />
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
-	<title>Hake</title>
+	<title>HAKE</title>
 	<meta name="description" content="マインクラフトで色々作ったりしてます。たまにプログラミングとかも。" />
 	<meta name="keywords" content="マインクラフト,Minecraft,プログラミング" />
 	<link rel="canonical" href="https://amatouhake.github.io/" />
@@ -16,19 +16,25 @@
 * {
 	margin: 0;
 	padding: 0;
-	font-size: medium;
+	font-size: 1em;
 	font-weight: normal;
 	font-family: 'Lato', sans-serif;
 }
 
-header {
+#background {
+	position: absolute;
+	width: 100%;
 	height: 3em;
 	background: #000;
-	color: #fff;
+	z-index: 2;
 }
 
-#title {
-	color: #f00;
+h1 {
+	position: absolute;
+	left: 1em;
+	top: 1em;
+	font-weight: bold;
+	color: #fff;
 }
 
 input {
@@ -38,7 +44,7 @@ input {
 	width: 2em;
 	height: 2em;
 	opacity: 0;
-	z-index: 3;
+	z-index: 4;
 }
 
 #span span {
@@ -49,7 +55,7 @@ input {
 	height: 0.2em;
 	background: #fff;
 	transition-duration: 0.2s;
-	z-index: 2;
+	z-index: 3;
 }
 
 #span span:nth-child(2) {
@@ -65,24 +71,23 @@ input:checked ~ #span span {
 	transform: rotate(45deg);
 }
 
-input:checked ~ #span span:nth-of-type(2) {
+input:checked ~ #span span:nth-child(2) {
 	transform: rotate(135deg);
 }
 
 #content {
 	position: absolute;
-	bottom: calc(100% - 3em);
+	top: calc(3em - 50%);
 	width: 100%;
 	height: 50%;
-	background: #000;
-	opacity: 0;
-	transition-duration: 0.2s;
+	background: #151515;
+	color: #fff;
 	z-index: 1;
+	transition-duration: 0.2s;
 }
 
 input:checked ~ #content {
-	bottom: 50%;
-	opacity: 1;
+	top: calc(7em - 50%);
 }
 
 canvas {
@@ -92,26 +97,19 @@ canvas {
 </head>
 <body>
 	<header>
-		<div id="title">Hake</div>
+		<div id="background">
+			<h1>HAKE</h1>
+		</div>
 		<input type="checkbox"></input>
 		<div id="span">
 			<span></span>
 			<span></span>
 			<span></span>
 		</div>
-		<div id="content">
-			あんこ
-		</div>
+		<div id="content"></div>
 	</header>
-	<canvas></canvas>
 	<script>
 (window.onload = function() {
-	var canvas = document.querySelector("canvas");
-	canvas.width = window.innerWidth;
-	canvas.height = 350;
-	var ctx = canvas.getContext("2d");
-	ctx.fillRect(50,50,window.innerWidth-100,300);
-	ctx.clearRect(100,100,window.innerWidth-200,200);
 })();
 	</script>
 </body>
