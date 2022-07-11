@@ -13,7 +13,7 @@
 
   route("/", Home);
   route("/about", About);
-  route("/", NotFound);
+  route("*", NotFound);
 
   router();
 </script>
