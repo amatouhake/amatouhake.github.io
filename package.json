@@ -1,31 +1,16 @@
 {
-  "name": "amatouhake.github.io",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@example/basics",
   "type": "module",
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "postbuild": "node -e \"require('fs').copyFileSync('docs/index.html', 'docs/404.html')\"",
-    "preview": "vite preview",
-    "check": "svelte-check --tsconfig ./tsconfig.json"
-  },
-  "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.30",
-    "@tsconfig/svelte": "^2.0.1",
-    "@types/page": "^1.11.5",
-    "carbon-components-svelte": "^0.67.0",
-    "carbon-icons-svelte": "^11.1.0",
-    "sass": "^1.53.0",
-    "svelte": "^3.44.0",
-    "svelte-check": "^2.2.7",
-    "svelte-preprocess": "^4.9.8",
-    "tslib": "^2.3.1",
-    "typescript": "^4.5.4",
-    "vite": "^2.9.9"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "normalize.css": "^8.0.1",
-    "page": "^1.11.6"
+    "astro": "^1.5.2"
   }
 }
