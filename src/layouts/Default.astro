@@ -1,0 +1,128 @@
+---
+import Empty from "@layouts/Empty.astro";
+import Twitter from "@assets/twitter.svg";
+import GitHub from "@assets/github.svg";
+import "normalize.css";
+
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<Empty title={title}>
+  <header>
+    <input type="checkbox" id="a" />
+    <label for="a" class="hamburger-menu">
+      <div></div>
+      <div></div>
+    </label>
+    <a href="/">
+      <h1>{title}</h1>
+    </a>
+  </header>
+  <main>
+    <slot />
+  </main>
+  <footer>
+    <div class="social-icons">
+      <a href="https://twitter.com/amatouhake">
+        <img src={Twitter} alt="Twitter" />
+      </a>
+      <a href="https://github.com/amatouhake">
+        <img src={GitHub} alt="GitHub" />
+      </a>
+    </div>
+    <p>© HAKE 2022~</p>
+  </footer>
+</Empty>
+<style lang="scss">
+  @import url("https://fonts.googleapis.com/css2?family=Klee+One&display=swap");
+
+  header {
+    display: flex;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    align-items: center;
+    background-color: rgb(16, 16, 32);
+    color: white;
+    input {
+      display: none;
+      &:checked ~ label {
+        div:nth-child(1) {
+          top: 50%;
+          transform: rotateZ(-45deg) translateY(-50%);
+        }
+        div:nth-child(2) {
+          top: 50%;
+          transform: rotateZ(45deg) translateY(-50%);
+        }
+      }
+    }
+    .hamburger-menu {
+      position: relative;
+      width: 1.5rem;
+      height: 1.5rem;
+      div {
+        position: absolute;
+        width: 100%;
+        height: 0.1rem;
+        background-color: white;
+        transition-duration: 100ms;
+      }
+      div:nth-child(1) {
+        top: 0.4rem;
+      }
+      div:nth-child(2) {
+        bottom: 0.4rem;
+      }
+    }
+    a {
+      margin-left: 2rem;
+      text-decoration: none;
+      display: block;
+      h1 {
+        color: white;
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  footer {
+    padding: 1rem;
+    background-color: rgb(16, 16, 32);
+    .social-icons {
+      text-align: center;
+      padding: 1rem;
+      a {
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        padding: 1rem;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        border-radius: 100%;
+        background-color: rgb(40, 40, 80);
+        box-shadow: 0 0 0.5rem 0 rgb(8, 8, 16);
+        transition-duration: 100ms;
+        &:hover {
+          transform: translateY(-0.1rem) scale(110%);
+          filter: brightness(120%);
+        }
+        img {
+          width: 2rem;
+          height: 2rem;
+          filter: invert(99%) sepia(0%) saturate(493%) hue-rotate(256deg)
+            brightness(110%) contrast(100%);
+        }
+      }
+    }
+    p {
+      padding: 1rem;
+      margin: 0;
+      text-align: center;
+      color: white;
+    }
+  }
+</style>
